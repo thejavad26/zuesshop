@@ -1,1 +1,2487 @@
+```html
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
+
+<title>ZUSE | CS2 SKINS</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+
+:root{
+    --yellow:#ffd000;
+    --yellow2:#ffb000;
+    --black:#070707;
+    --black2:#0d0d0d;
+    --black3:#151515;
+    --card:#111;
+    --line:rgba(255,208,0,.16);
+    --text:#fff;
+    --muted:#858585;
+    --green:#25d366;
+    --red:#ff4545;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Vazirmatn",sans-serif;
+    background:
+        radial-gradient(circle at 10% 10%,rgba(255,208,0,.08),transparent 28%),
+        radial-gradient(circle at 90% 70%,rgba(255,208,0,.06),transparent 30%),
+        var(--black);
+    color:var(--text);
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+button,input{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+a{
+    text-decoration:none;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    height:76px;
+    padding:0 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:rgba(7,7,7,.82);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid var(--line);
+}
+
+.logo{
+    font-size:25px;
+    font-weight:900;
+    color:var(--yellow);
+    letter-spacing:2px;
+}
+
+.logo small{
+    display:block;
+    font-size:8px;
+    letter-spacing:4px;
+    color:#777;
+    text-align:center;
+    margin-top:-4px;
+}
+
+.nav{
+    display:flex;
+    gap:28px;
+}
+
+.nav a{
+    color:#aaa;
+    font-size:14px;
+    transition:.25s;
+}
+
+.nav a:hover{
+    color:var(--yellow);
+}
+
+.header-actions{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.icon-btn{
+    width:43px;
+    height:43px;
+    border-radius:13px;
+    border:1px solid #292929;
+    background:#121212;
+    color:white;
+    font-size:18px;
+    transition:.3s;
+    position:relative;
+}
+
+.icon-btn:hover{
+    color:var(--yellow);
+    border-color:var(--yellow);
+    transform:translateY(-2px);
+}
+
+.badge-count{
+    position:absolute;
+    top:-6px;
+    left:-5px;
+    width:19px;
+    height:19px;
+    border-radius:50%;
+    background:#ff3434;
+    color:#fff;
+    font-size:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* ================= PROFILE ================= */
+
+.profile{
+    position:fixed;
+    left:18px;
+    top:91px;
+    z-index:1200;
+}
+
+.profile-button{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    border:1px solid rgba(255,208,0,.45);
+    background:#151515;
+    color:var(--yellow);
+    font-size:20px;
+    box-shadow:0 0 25px rgba(255,208,0,.08);
+    transition:.3s;
+}
+
+.profile-button:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 30px rgba(255,208,0,.2);
+}
+
+.profile-box{
+    position:absolute;
+    left:0;
+    top:58px;
+    width:300px;
+    padding:22px;
+    border:1px solid var(--line);
+    background:rgba(18,18,18,.98);
+    border-radius:20px;
+    box-shadow:0 25px 70px #000;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-12px);
+    transition:.3s;
+}
+
+.profile-box.active{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+.profile-box h3{
+    color:var(--yellow);
+    margin-bottom:7px;
+}
+
+.profile-box p{
+    color:#777;
+    font-size:12px;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.profile-box input{
+    width:100%;
+    padding:13px;
+    border-radius:11px;
+    border:1px solid #292929;
+    background:#090909;
+    color:#fff;
+    outline:none;
+    direction:ltr;
+    text-align:left;
+    margin-bottom:10px;
+}
+
+.profile-box input:focus{
+    border-color:var(--yellow);
+}
+
+.save-profile{
+    width:100%;
+    padding:12px;
+    border:0;
+    border-radius:11px;
+    background:var(--yellow);
+    color:#000;
+    font-weight:800;
+}
+
+.profile-status{
+    font-size:11px;
+    margin-top:10px;
+    color:#666;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    width:min(1200px,90%);
+    min-height:480px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    background:var(--yellow);
+    filter:blur(150px);
+    opacity:.08;
+    z-index:-1;
+}
+
+.hero-content{
+    animation:heroIn .9s ease both;
+}
+
+@keyframes heroIn{
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.hero-label{
+    display:inline-block;
+    padding:8px 16px;
+    border-radius:30px;
+    border:1px solid var(--line);
+    background:rgba(255,208,0,.07);
+    color:var(--yellow);
+    font-size:12px;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:clamp(42px,7vw,82px);
+    line-height:1.05;
+    font-weight:900;
+}
+
+.hero h1 span{
+    color:var(--yellow);
+    text-shadow:0 0 35px rgba(255,208,0,.2);
+}
+
+.hero p{
+    max-width:650px;
+    margin:22px auto 0;
+    color:#888;
+    line-height:2;
+    font-size:14px;
+}
+
+.hero-buttons{
+    margin-top:28px;
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.primary-btn{
+    padding:14px 27px;
+    border-radius:13px;
+    border:0;
+    background:var(--yellow);
+    color:#000;
+    font-weight:900;
+    transition:.3s;
+}
+
+.primary-btn:hover{
+    background:#fff;
+    transform:translateY(-4px);
+    box-shadow:0 15px 35px rgba(255,208,0,.16);
+}
+
+.secondary-btn{
+    padding:14px 27px;
+    border-radius:13px;
+    border:1px solid #333;
+    background:#111;
+    color:#fff;
+    font-weight:700;
+    transition:.3s;
+}
+
+.secondary-btn:hover{
+    border-color:var(--yellow);
+    color:var(--yellow);
+}
+
+/* ================= SHOP ================= */
+
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+.section-head{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.section-head h2{
+    font-size:28px;
+}
+
+.section-head p{
+    color:#777;
+    font-size:12px;
+    margin-top:5px;
+}
+
+.search{
+    width:280px;
+    padding:13px 16px;
+    border:1px solid #292929;
+    border-radius:13px;
+    outline:none;
+    background:#101010;
+    color:#fff;
+}
+
+.search:focus{
+    border-color:var(--yellow);
+}
+
+/* ================= FILTERS ================= */
+
+.filters{
+    display:flex;
+    gap:9px;
+    overflow-x:auto;
+    padding-bottom:8px;
+    margin-bottom:25px;
+}
+
+.filter{
+    flex:0 0 auto;
+    padding:9px 17px;
+    border-radius:30px;
+    border:1px solid #282828;
+    background:#101010;
+    color:#999;
+    transition:.25s;
+}
+
+.filter:hover,
+.filter.active{
+    color:#000;
+    background:var(--yellow);
+    border-color:var(--yellow);
+}
+
+/* ================= PRODUCTS ================= */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    padding-bottom:80px;
+}
+
+.product{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(145deg,#171717,#0c0c0c);
+    border:1px solid #232323;
+    border-radius:20px;
+    transition:.4s;
+    animation:cardIn .65s ease both;
+}
+
+.product:hover{
+    transform:translateY(-8px);
+    border-color:rgba(255,208,0,.5);
+    box-shadow:0 20px 55px rgba(0,0,0,.45);
+}
+
+@keyframes cardIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.product-image{
+    height:190px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+        radial-gradient(circle at 50% 50%,rgba(255,208,0,.1),transparent 55%),
+        #101010;
+    position:relative;
+}
+
+.product-image img{
+    max-width:90%;
+    max-height:150px;
+    object-fit:contain;
+    filter:drop-shadow(0 15px 15px #000);
+    transition:.4s;
+}
+
+.product:hover .product-image img{
+    transform:scale(1.07) rotate(-2deg);
+}
+
+.skin-placeholder{
+    font-size:70px;
+    color:var(--yellow);
+    filter:drop-shadow(0 15px 20px #000);
+}
+
+.rarity{
+    position:absolute;
+    top:12px;
+    right:12px;
+    padding:5px 9px;
+    border-radius:7px;
+    background:rgba(0,0,0,.7);
+    color:var(--yellow);
+    font-size:10px;
+}
+
+.product-info{
+    padding:17px;
+}
+
+.weapon{
+    color:#777;
+    font-size:11px;
+}
+
+.product-info h3{
+    margin:5px 0 8px;
+    font-size:17px;
+}
+
+.product-description{
+    color:#777;
+    font-size:11px;
+    line-height:1.8;
+    min-height:40px;
+}
+
+.product-bottom{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-top:15px;
+}
+
+.price{
+    color:var(--yellow);
+    font-weight:900;
+    font-size:14px;
+}
+
+.details-btn{
+    padding:9px 13px;
+    border:0;
+    border-radius:9px;
+    background:#222;
+    color:#fff;
+    font-size:11px;
+    transition:.25s;
+}
+
+.details-btn:hover{
+    background:var(--yellow);
+    color:#000;
+}
+
+/* ================= DETAIL MODAL ================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    z-index:3000;
+    background:rgba(0,0,0,.78);
+    backdrop-filter:blur(12px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+}
+
+.modal.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.detail{
+    width:min(950px,100%);
+    max-height:92vh;
+    overflow:auto;
+    border:1px solid var(--line);
+    border-radius:25px;
+    background:#101010;
+    box-shadow:0 30px 100px #000;
+    transform:scale(.94) translateY(15px);
+    transition:.35s;
+}
+
+.modal.active .detail{
+    transform:scale(1) translateY(0);
+}
+
+.detail-close{
+    position:absolute;
+    top:18px;
+    left:18px;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:1px solid #333;
+    background:#151515;
+    color:#fff;
+    z-index:2;
+}
+
+.detail-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+}
+
+.detail-visual{
+    min-height:500px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+        radial-gradient(circle,rgba(255,208,0,.12),transparent 50%),
+        #0a0a0a;
+    padding:35px;
+}
+
+.detail-visual img{
+    max-width:90%;
+    max-height:400px;
+    object-fit:contain;
+    filter:drop-shadow(0 25px 30px #000);
+}
+
+.detail-placeholder{
+    font-size:130px;
+    color:var(--yellow);
+}
+
+.detail-info{
+    padding:40px 30px;
+}
+
+.detail-category{
+    color:var(--yellow);
+    font-size:11px;
+}
+
+.detail-info h2{
+    font-size:32px;
+    margin:8px 0;
+}
+
+.detail-info > p{
+    color:#777;
+    font-size:13px;
+    line-height:2;
+}
+
+.option-title{
+    font-size:12px;
+    color:#aaa;
+    margin:22px 0 9px;
+}
+
+.options{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.option{
+    padding:10px 13px;
+    border:1px solid #2a2a2a;
+    background:#151515;
+    color:#aaa;
+    border-radius:10px;
+    font-size:11px;
+    transition:.2s;
+}
+
+.option:hover,
+.option.selected{
+    background:var(--yellow);
+    color:#000;
+    border-color:var(--yellow);
+}
+
+.float-box{
+    margin-top:18px;
+    padding:14px;
+    border-radius:12px;
+    background:#151515;
+    border:1px solid #242424;
+}
+
+.float-box span{
+    color:#777;
+    font-size:11px;
+}
+
+.float-number{
+    color:#fff;
+    font-weight:800;
+    margin-top:4px;
+    direction:ltr;
+    text-align:left;
+}
+
+.detail-price{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:25px;
+    padding-top:20px;
+    border-top:1px solid #242424;
+}
+
+.detail-price strong{
+    color:var(--yellow);
+    font-size:22px;
+}
+
+.buy-detail{
+    padding:13px 22px;
+    border:0;
+    border-radius:12px;
+    background:var(--yellow);
+    color:#000;
+    font-weight:900;
+}
+
+/* ================= CART ================= */
+
+.cart-drawer{
+    position:fixed;
+    top:0;
+    left:0;
+    height:100vh;
+    width:min(390px,92%);
+    background:#111;
+    z-index:3500;
+    border-right:1px solid var(--line);
+    box-shadow:20px 0 80px #000;
+    transform:translateX(-105%);
+    transition:.4s;
+    padding:25px;
+    overflow:auto;
+}
+
+.cart-drawer.active{
+    transform:translateX(0);
+}
+
+.cart-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.cart-head h2{
+    color:var(--yellow);
+}
+
+.close-cart{
+    border:0;
+    background:none;
+    color:#aaa;
+    font-size:23px;
+}
+
+.cart-item{
+    padding:15px 0;
+    border-bottom:1px solid #222;
+}
+
+.cart-item h4{
+    margin-bottom:5px;
+}
+
+.cart-item p{
+    color:#777;
+    font-size:11px;
+}
+
+.cart-total{
+    margin-top:25px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.cart-total strong{
+    color:var(--yellow);
+}
+
+.checkout{
+    width:100%;
+    margin-top:18px;
+    padding:14px;
+    border:0;
+    border-radius:12px;
+    background:var(--yellow);
+    color:#000;
+    font-weight:900;
+}
+
+.empty{
+    color:#666;
+    text-align:center;
+    padding:60px 10px;
+}
+
+/* ================= TOAST ================= */
+
+.toast{
+    position:fixed;
+    bottom:25px;
+    left:50%;
+    z-index:5000;
+    transform:translate(-50%,100px);
+    background:#151515;
+    border:1px solid var(--yellow);
+    border-radius:12px;
+    padding:13px 20px;
+    color:#fff;
+    font-size:12px;
+    opacity:0;
+    transition:.35s;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translate(-50%,0);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    border-top:1px solid #222;
+    padding:35px 20px;
+    text-align:center;
+    color:#555;
+    font-size:12px;
+}
+
+footer span{
+    color:var(--yellow);
+}
+
+/* ================= MOBILE ================= */
+
+.mobile-menu{
+    display:none;
+}
+
+@media(max-width:1000px){
+    .products{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .detail-grid{
+        grid-template-columns:1fr;
+    }
+
+    .detail-visual{
+        min-height:300px;
+    }
+
+    .detail-visual img{
+        max-height:250px;
+    }
+}
+
+@media(max-width:700px){
+
+    .header{
+        height:68px;
+        padding:0 4%;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .nav{
+        display:none;
+    }
+
+    .mobile-menu{
+        display:block;
+    }
+
+    .header-actions{
+        gap:6px;
+    }
+
+    .icon-btn{
+        width:40px;
+        height:40px;
+    }
+
+    .profile{
+        top:82px;
+        left:12px;
+    }
+
+    .profile-box{
+        width:280px;
+    }
+
+    .hero{
+        min-height:440px;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .hero p{
+        font-size:12px;
+    }
+
+    .section-head{
+        display:block;
+    }
+
+    .search{
+        width:100%;
+        margin-top:15px;
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+        gap:11px;
+    }
+
+    .product-image{
+        height:140px;
+    }
+
+    .product-image img{
+        max-height:110px;
+    }
+
+    .skin-placeholder{
+        font-size:48px;
+    }
+
+    .product-info{
+        padding:12px;
+    }
+
+    .product-info h3{
+        font-size:14px;
+    }
+
+    .product-description{
+        font-size:10px;
+    }
+
+    .price{
+        font-size:11px;
+    }
+
+    .details-btn{
+        font-size:10px;
+        padding:8px 9px;
+    }
+
+    .detail{
+        max-height:95vh;
+        border-radius:20px;
+    }
+
+    .detail-info{
+        padding:25px 18px;
+    }
+
+    .detail-info h2{
+        font-size:25px;
+    }
+
+    .detail-visual{
+        min-height:230px;
+        padding:20px;
+    }
+
+    .detail-visual img{
+        max-height:190px;
+    }
+
+    .detail-placeholder{
+        font-size:90px;
+    }
+
+    .detail-price strong{
+        font-size:18px;
+    }
+}
+
+@media(max-width:430px){
+
+    .products{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .primary-btn,
+    .secondary-btn{
+        width:100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="logo">
+        ZUSE
+        <small>CS2 SKINS</small>
+    </div>
+
+    <nav class="nav">
+        <a href="#home">خانه</a>
+        <a href="#shop">اسکین‌ها</a>
+        <a href="#categories">دسته‌بندی</a>
+        <a href="#contact">تماس</a>
+    </nav>
+
+    <div class="header-actions">
+
+        <button class="icon-btn mobile-menu" onclick="scrollToShop()">
+            ☰
+        </button>
+
+        <button class="icon-btn" onclick="openCart()">
+            🛒
+            <span class="badge-count" id="cartCount">0</span>
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= PROFILE ================= -->
+
+<div class="profile">
+
+    <button class="profile-button" onclick="toggleProfile()">
+        👤
+    </button>
+
+    <div class="profile-box" id="profileBox">
+
+        <h3>پروفایل</h3>
+
+        <p>
+            برای ثبت سفارش، شماره موبایل خود را وارد کنید.
+        </p>
+
+        <input
+            id="phone"
+            type="tel"
+            maxlength="11"
+            placeholder="09123456789"
+        >
+
+        <button class="save-profile" onclick="savePhone()">
+            ذخیره شماره
+        </button>
+
+        <div class="profile-status" id="profileStatus">
+            شماره‌ای ثبت نشده است.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            ZUSE CS2 SKIN MARKET
+        </div>
+
+        <h1>
+            اسکینتو
+            <span>انتخاب کن.</span>
+        </h1>
+
+        <p>
+            مجموعه‌ای از اسکین‌های جذاب Counter-Strike 2.
+            مدل، Wear، StatTrak و مشخصات مورد نظرت را انتخاب کن
+            و سفارش را مستقیم برای ادمین ارسال کن.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="primary-btn" onclick="scrollToShop()">
+                مشاهده اسکین‌ها
+            </button>
+
+            <a
+                class="secondary-btn"
+                href="https://t.me/zuse_admin0"
+                target="_blank"
+            >
+                💬 پشتیبانی تلگرام
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SHOP ================= -->
+
+<section class="container" id="shop">
+
+    <div class="section-head">
+
+        <div>
+            <h2>بازار اسکین‌ها</h2>
+            <p>اسکین مورد نظر خودت را پیدا کن</p>
+        </div>
+
+        <input
+            class="search"
+            id="search"
+            type="text"
+            placeholder="🔎 جستجوی AK-47، AWP..."
+            oninput="searchProducts()"
+        >
+
+    </div>
+
+
+    <div class="filters" id="categories">
+
+        <button
+            class="filter active"
+            onclick="filterProducts('all',this)"
+        >
+            همه
+        </button>
+
+        <button
+            class="filter"
+            onclick="filterProducts('rifle',this)"
+        >
+            Rifle
+        </button>
+
+        <button
+            class="filter"
+            onclick="filterProducts('sniper',this)"
+        >
+            Sniper
+        </button>
+
+        <button
+            class="filter"
+            onclick="filterProducts('pistol',this)"
+        >
+            Pistol
+        </button>
+
+        <button
+            class="filter"
+            onclick="filterProducts('knife',this)"
+        >
+            Knife
+        </button>
+
+    </div>
+
+
+    <div class="products" id="products"></div>
+
+</section>
+
+
+<!-- ================= DETAIL MODAL ================= -->
+
+<div class="modal" id="modal">
+
+    <div class="detail">
+
+        <button class="detail-close" onclick="closeModal()">
+            ✕
+        </button>
+
+        <div class="detail-grid">
+
+            <div class="detail-visual" id="detailVisual">
+            </div>
+
+            <div class="detail-info">
+
+                <div class="detail-category" id="detailCategory">
+                    RIFLE
+                </div>
+
+                <h2 id="detailName">
+                    AK-47
+                </h2>
+
+                <p id="detailDescription">
+                    توضیحات اسکین
+                </p>
+
+
+                <!-- SKIN -->
+
+                <div class="option-title">
+                    مدل / Skin
+                </div>
+
+                <div class="options" id="skinOptions"></div>
+
+
+                <!-- WEAR -->
+
+                <div class="option-title">
+                    Wear
+                </div>
+
+                <div class="options" id="wearOptions">
+
+                    <button
+                        class="option selected"
+                        onclick="selectWear(this,'Factory New')"
+                    >
+                        Factory New
+                    </button>
+
+                    <button
+                        class="option"
+                        onclick="selectWear(this,'Minimal Wear')"
+                    >
+                        Minimal Wear
+                    </button>
+
+                    <button
+                        class="option"
+                        onclick="selectWear(this,'Field-Tested')"
+                    >
+                        Field-Tested
+                    </button>
+
+                    <button
+                        class="option"
+                        onclick="selectWear(this,'Well-Worn')"
+                    >
+                        Well-Worn
+                    </button>
+
+                    <button
+                        class="option"
+                        onclick="selectWear(this,'Battle-Scarred')"
+                    >
+                        Battle-Scarred
+                    </button>
+
+                </div>
+
+
+                <!-- STATTRAK -->
+
+                <div class="option-title">
+                    StatTrak
+                </div>
+
+                <div class="options">
+
+                    <button
+                        class="option selected"
+                        onclick="selectStat(this,false)"
+                    >
+                        معمولی
+                    </button>
+
+                    <button
+                        class="option"
+                        onclick="selectStat(this,true)"
+                    >
+                        StatTrak™
+                    </button>
+
+                </div>
+
+
+                <div class="float-box">
+
+                    <span>
+                        Float Value
+                    </span>
+
+                    <div
+                        class="float-number"
+                        id="floatValue"
+                    >
+                        0.071245
+                    </div>
+
+                </div>
+
+
+                <div class="detail-price">
+
+                    <strong id="detailPrice">
+                        2,500,000 تومان
+                    </strong>
+
+                    <button
+                        class="buy-detail"
+                        onclick="addCurrentToCart()"
+                    >
+                        افزودن به سبد
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= CART ================= -->
+
+<div class="cart-drawer" id="cartDrawer">
+
+    <div class="cart-head">
+
+        <h2>
+            سبد خرید
+        </h2>
+
+        <button
+            class="close-cart"
+            onclick="closeCart()"
+        >
+            ✕
+        </button>
+
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-total">
+
+        <span>
+            مجموع:
+        </span>
+
+        <strong id="cartTotal">
+            0 تومان
+        </strong>
+
+    </div>
+
+    <button
+        class="checkout"
+        onclick="checkout()"
+    >
+        💬 ثبت سفارش در تلگرام
+    </button>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div class="toast" id="toast"></div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact">
+
+    <p>
+        ZUSE <span>CS2 SKINS</span>
+    </p>
+
+    <p style="margin-top:8px;">
+        پشتیبانی و ثبت سفارش:
+        <a
+            href="https://t.me/zuse_admin0"
+            target="_blank"
+            style="color:#ffd000"
+        >
+            @zuse_admin0
+        </a>
+    </p>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   TELEGRAM
+========================================================= */
+
+const TELEGRAM_USERNAME = "zuse_admin0";
+
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+const products = [
+
+    {
+        id:1,
+        name:"AK-47 | Redline",
+        weapon:"AK-47",
+        category:"rifle",
+        rarity:"Classified",
+        price:2500000,
+        description:"یکی از محبوب‌ترین اسکین‌های AK-47 با طراحی قرمز و مشکی.",
+        image:"",
+        skins:[
+            "Redline",
+            "Legion of Anubis",
+            "The Empress"
+        ]
+    },
+
+    {
+        id:2,
+        name:"AK-47 | The Empress",
+        weapon:"AK-47",
+        category:"rifle",
+        rarity:"Covert",
+        price:4800000,
+        description:"اسکین پرجزئیات و محبوب برای AK-47.",
+        image:"",
+        skins:[
+            "The Empress",
+            "Redline",
+            "Neon Rider"
+        ]
+    },
+
+    {
+        id:3,
+        name:"AWP | Asiimov",
+        weapon:"AWP",
+        category:"sniper",
+        rarity:"Covert",
+        price:6200000,
+        description:"یکی از شناخته‌شده‌ترین اسکین‌های AWP.",
+        image:"",
+        skins:[
+            "Asiimov",
+            "Dragon Lore",
+            "Containment Breach"
+        ]
+    },
+
+    {
+        id:4,
+        name:"AWP | Dragon Lore",
+        weapon:"AWP",
+        category:"sniper",
+        rarity:"Covert",
+        price:25000000,
+        description:"اسکین افسانه‌ای Dragon Lore.",
+        image:"",
+        skins:[
+            "Dragon Lore",
+            "Asiimov",
+            "Hyper Beast"
+        ]
+    },
+
+    {
+        id:5,
+        name:"M4A1-S | Printstream",
+        weapon:"M4A1-S",
+        category:"rifle",
+        rarity:"Covert",
+        price:7300000,
+        description:"طراحی سفید و مشکی مدرن با جزئیات جذاب.",
+        image:"",
+        skins:[
+            "Printstream",
+            "Golden Coil",
+            "Player Two"
+        ]
+    },
+
+    {
+        id:6,
+        name:"M4A1-S | Hyper Beast",
+        weapon:"M4A1-S",
+        category:"rifle",
+        rarity:"Covert",
+        price:5100000,
+        description:"اسکین رنگارنگ و گیمینگ Hyper Beast.",
+        image:"",
+        skins:[
+            "Hyper Beast",
+            "Printstream",
+            "Chantico's Fire"
+        ]
+    },
+
+    {
+        id:7,
+        name:"Glock-18 | Fade",
+        weapon:"Glock-18",
+        category:"pistol",
+        rarity:"Restricted",
+        price:3900000,
+        description:"طراحی Fade با ظاهر بسیار چشم‌گیر.",
+        image:"",
+        skins:[
+            "Fade",
+            "Water Elemental",
+            "Gamma Doppler"
+        ]
+    },
+
+    {
+        id:8,
+        name:"★ Karambit | Doppler",
+        weapon:"Karambit",
+        category:"knife",
+        rarity:"Covert",
+        price:18000000,
+        description:"یک Knife محبوب با ظاهر درخشان Doppler.",
+        image:"",
+        skins:[
+            "Doppler",
+            "Gamma Doppler",
+            "Fade"
+        ]
+    }
+
+];
+
+
+/* =========================================================
+   STATE
+========================================================= */
+
+let currentFilter = "all";
+let currentProduct = null;
+
+let selectedSkin = "";
+let selectedWear = "Factory New";
+let selectedStatTrak = false;
+
+let cart = [];
+
+
+/* =========================================================
+   FORMAT PRICE
+========================================================= */
+
+function formatPrice(number){
+
+    return number
+        .toLocaleString("fa-IR")
+        + " تومان";
+
+}
+
+
+/* =========================================================
+   RENDER PRODUCTS
+========================================================= */
+
+function renderProducts(){
+
+    const container = document.getElementById("products");
+
+    const query =
+        document
+        .getElementById("search")
+        .value
+        .trim()
+        .toLowerCase();
+
+
+    let list = products.filter(product => {
+
+        const categoryMatch =
+            currentFilter === "all" ||
+            product.category === currentFilter;
+
+        const searchMatch =
+            !query ||
+            product.name.toLowerCase().includes(query) ||
+            product.weapon.toLowerCase().includes(query);
+
+        return categoryMatch && searchMatch;
+
+    });
+
+
+    container.innerHTML = "";
+
+
+    if(list.length === 0){
+
+        container.innerHTML = `
+            <div style="
+                grid-column:1/-1;
+                text-align:center;
+                color:#666;
+                padding:60px;
+            ">
+                اسکینی پیدا نشد.
+            </div>
+        `;
+
+        return;
+    }
+
+
+    list.forEach((product,index)=>{
+
+        const card = document.createElement("div");
+
+        card.className = "product";
+
+        card.style.animationDelay =
+            `${index * 0.06}s`;
+
+
+        card.innerHTML = `
+
+            <div class="product-image">
+
+                ${
+                    product.image
+                    ?
+                    `<img src="${product.image}" alt="${product.name}">`
+                    :
+                    `<div class="skin-placeholder">🔫</div>`
+                }
+
+                <div class="rarity">
+                    ${product.rarity}
+                </div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="weapon">
+                    ${product.weapon}
+                </div>
+
+                <h3>
+                    ${product.name}
+                </h3>
+
+                <div class="product-description">
+                    ${product.description}
+                </div>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        ${formatPrice(product.price)}
+                    </div>
+
+                    <button
+                        class="details-btn"
+                        onclick="openDetails(${product.id})"
+                    >
+                        مشاهده
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+        container.appendChild(card);
+
+    });
+
+}
+
+
+/* =========================================================
+   FILTER
+========================================================= */
+
+function filterProducts(category,button){
+
+    currentFilter = category;
+
+    document
+        .querySelectorAll(".filter")
+        .forEach(btn =>
+            btn.classList.remove("active")
+        );
+
+    button.classList.add("active");
+
+    renderProducts();
+
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+function searchProducts(){
+
+    renderProducts();
+
+}
+
+
+/* =========================================================
+   OPEN DETAILS
+========================================================= */
+
+function openDetails(id){
+
+    const product =
+        products.find(p => p.id === id);
+
+    if(!product) return;
+
+    currentProduct = product;
+
+    selectedSkin = product.skins[0];
+    selectedWear = "Factory New";
+    selectedStatTrak = false;
+
+
+    document.getElementById("detailCategory")
+        .innerText =
+        product.weapon.toUpperCase();
+
+
+    document.getElementById("detailName")
+        .innerText =
+        product.name;
+
+
+    document.getElementById("detailDescription")
+        .innerText =
+        product.description;
+
+
+    document.getElementById("detailVisual")
+        .innerHTML =
+        product.image
+        ?
+        `<img src="${product.image}" alt="${product.name}">`
+        :
+        `<div class="detail-placeholder">🔫</div>`;
+
+
+    renderSkinOptions();
+
+    resetWearOptions();
+
+    resetStatOptions();
+
+    updateDetailPrice();
+
+    generateFloat();
+
+
+    document
+        .getElementById("modal")
+        .classList.add("active");
+
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+/* =========================================================
+   SKIN OPTIONS
+========================================================= */
+
+function renderSkinOptions(){
+
+    const box =
+        document.getElementById("skinOptions");
+
+    box.innerHTML = "";
+
+    currentProduct.skins.forEach((skin,index)=>{
+
+        const btn =
+            document.createElement("button");
+
+        btn.className =
+            "option" +
+            (index === 0 ? " selected" : "");
+
+        btn.innerText = skin;
+
+        btn.onclick = () => {
+
+            selectedSkin = skin;
+
+            box
+                .querySelectorAll(".option")
+                .forEach(x =>
+                    x.classList.remove("selected")
+                );
+
+            btn.classList.add("selected");
+
+            updateDetailPrice();
+
+        };
+
+        box.appendChild(btn);
+
+    });
+
+}
+
+
+/* =========================================================
+   WEAR
+========================================================= */
+
+function selectWear(button,wear){
+
+    selectedWear = wear;
+
+    document
+        .querySelectorAll("#wearOptions .option")
+        .forEach(btn =>
+            btn.classList.remove("selected")
+        );
+
+    button.classList.add("selected");
+
+    generateFloat();
+
+    updateDetailPrice();
+
+}
+
+
+function resetWearOptions(){
+
+    document
+        .querySelectorAll("#wearOptions .option")
+        .forEach(btn =>
+            btn.classList.remove("selected")
+        );
+
+    document
+        .querySelector("#wearOptions .option")
+        .classList.add("selected");
+
+}
+
+
+/* =========================================================
+   STATTRAK
+========================================================= */
+
+function selectStat(button,value){
+
+    selectedStatTrak = value;
+
+    button
+        .parentElement
+        .querySelectorAll(".option")
+        .forEach(btn =>
+            btn.classList.remove("selected")
+        );
+
+    button.classList.add("selected");
+
+    updateDetailPrice();
+
+}
+
+
+function resetStatOptions(){
+
+    const options =
+        document
+        .querySelectorAll(
+            ".detail-info .options"
+        );
+
+    const statBox = options[2];
+
+    statBox
+        .querySelectorAll(".option")
+        .forEach(btn =>
+            btn.classList.remove("selected")
+        );
+
+    statBox
+        .querySelector(".option")
+        .classList.add("selected");
+
+}
+
+
+/* =========================================================
+   FLOAT
+========================================================= */
+
+function generateFloat(){
+
+    let min = 0.00;
+    let max = 1.00;
+
+    if(selectedWear === "Factory New"){
+        min = 0.00;
+        max = 0.07;
+    }
+
+    if(selectedWear === "Minimal Wear"){
+        min = 0.07;
+        max = 0.15;
+    }
+
+    if(selectedWear === "Field-Tested"){
+        min = 0.15;
+        max = 0.38;
+    }
+
+    if(selectedWear === "Well-Worn"){
+        min = 0.38;
+        max = 0.45;
+    }
+
+    if(selectedWear === "Battle-Scarred"){
+        min = 0.45;
+        max = 1.00;
+    }
+
+    const value =
+        Math.random() * (max - min) + min;
+
+    document
+        .getElementById("floatValue")
+        .innerText =
+        value.toFixed(6);
+
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+function updateDetailPrice(){
+
+    if(!currentProduct) return;
+
+    let price =
+        currentProduct.price;
+
+
+    if(selectedWear === "Minimal Wear")
+        price *= 1.12;
+
+    if(selectedWear === "Field-Tested")
+        price *= 0.92;
+
+    if(selectedWear === "Well-Worn")
+        price *= 0.82;
+
+    if(selectedWear === "Battle-Scarred")
+        price *= 0.70;
+
+    if(selectedStatTrak)
+        price *= 1.18;
+
+
+    document
+        .getElementById("detailPrice")
+        .innerText =
+        formatPrice(Math.round(price));
+
+}
+
+
+/* =========================================================
+   CLOSE MODAL
+========================================================= */
+
+function closeModal(){
+
+    document
+        .getElementById("modal")
+        .classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+
+/* =========================================================
+   ADD CURRENT TO CART
+========================================================= */
+
+function addCurrentToCart(){
+
+    if(!currentProduct) return;
+
+
+    const phone =
+        localStorage.getItem("zuse_phone");
+
+
+    if(!phone){
+
+        closeModal();
+
+        document
+            .getElementById("profileBox")
+            .classList.add("active");
+
+        showToast(
+            "ابتدا شماره موبایل خود را وارد کنید."
+        );
+
+        return;
+
+    }
+
+
+    let price =
+        currentProduct.price;
+
+
+    if(selectedWear === "Minimal Wear")
+        price *= 1.12;
+
+    if(selectedWear === "Field-Tested")
+        price *= .92;
+
+    if(selectedWear === "Well-Worn")
+        price *= .82;
+
+    if(selectedWear === "Battle-Scarred")
+        price *= .70;
+
+    if(selectedStatTrak)
+        price *= 1.18;
+
+
+    cart.push({
+
+        id:Date.now(),
+
+        name:currentProduct.name,
+
+        weapon:currentProduct.weapon,
+
+        skin:selectedSkin,
+
+        wear:selectedWear,
+
+        stattrak:selectedStatTrak,
+
+        float:
+            document
+            .getElementById("floatValue")
+            .innerText,
+
+        price:Math.round(price)
+
+    });
+
+
+    updateCart();
+
+    closeModal();
+
+    showToast(
+        "اسکین به سبد خرید اضافه شد."
+    );
+
+}
+
+
+/* =========================================================
+   CART
+========================================================= */
+
+function updateCart(){
+
+    document
+        .getElementById("cartCount")
+        .innerText =
+        cart.length;
+
+
+    const box =
+        document.getElementById("cartItems");
+
+    if(cart.length === 0){
+
+        box.innerHTML = `
+            <div class="empty">
+                🛒<br><br>
+                سبد خرید خالی است.
+            </div>
+        `;
+
+        document
+            .getElementById("cartTotal")
+            .innerText =
+            "0 تومان";
+
+        return;
+
+    }
+
+
+    box.innerHTML = "";
+
+
+    let total = 0;
+
+
+    cart.forEach((item,index)=>{
+
+        total += item.price;
+
+
+        const div =
+            document.createElement("div");
+
+        div.className = "cart-item";
+
+
+        div.innerHTML = `
+
+            <h4>
+                ${item.name}
+            </h4>
+
+            <p>
+                Skin: ${item.skin}
+            </p>
+
+            <p>
+                Wear: ${item.wear}
+            </p>
+
+            <p>
+                ${
+                    item.stattrak
+                    ? "StatTrak™"
+                    : "Normal"
+                }
+            </p>
+
+            <p>
+                Float: ${item.float}
+            </p>
+
+            <strong style="
+                display:block;
+                margin-top:8px;
+                color:#ffd000;
+            ">
+                ${formatPrice(item.price)}
+            </strong>
+
+            <button
+                onclick="removeCartItem(${index})"
+                style="
+                    margin-top:8px;
+                    background:none;
+                    border:0;
+                    color:#ff4545;
+                    font-size:11px;
+                "
+            >
+                حذف
+            </button>
+
+        `;
+
+        box.appendChild(div);
+
+    });
+
+
+    document
+        .getElementById("cartTotal")
+        .innerText =
+        formatPrice(total);
+
+}
+
+
+function removeCartItem(index){
+
+    cart.splice(index,1);
+
+    updateCart();
+
+}
+
+
+/* =========================================================
+   CART DRAWER
+========================================================= */
+
+function openCart(){
+
+    updateCart();
+
+    document
+        .getElementById("cartDrawer")
+        .classList.add("active");
+
+}
+
+
+function closeCart(){
+
+    document
+        .getElementById("cartDrawer")
+        .classList.remove("active");
+
+}
+
+
+/* =========================================================
+   CHECKOUT TELEGRAM
+========================================================= */
+
+function checkout(){
+
+    if(cart.length === 0){
+
+        showToast(
+            "سبد خرید شما خالی است."
+        );
+
+        return;
+
+    }
+
+
+    const phone =
+        localStorage.getItem("zuse_phone");
+
+
+    if(!phone){
+
+        closeCart();
+
+        document
+            .getElementById("profileBox")
+            .classList.add("active");
+
+        showToast(
+            "برای ثبت سفارش شماره موبایل لازم است."
+        );
+
+        return;
+
+    }
+
+
+    let message =
+        "🟡 ZUSE CS2 ORDER\n\n";
+
+
+    message +=
+        "📱 شماره تماس: " +
+        phone +
+        "\n\n";
+
+
+    cart.forEach((item,index)=>{
+
+        message +=
+            `🎮 آیتم ${index + 1}\n` +
+            `🔫 ${item.name}\n` +
+            `🎨 Skin: ${item.skin}\n` +
+            `📦 Wear: ${item.wear}\n` +
+            `⭐ ${item.stattrak ? "StatTrak™" : "Normal"}\n` +
+            `📊 Float: ${item.float}\n` +
+            `💰 ${formatPrice(item.price)}\n\n`;
+
+    });
+
+
+    const total =
+        cart.reduce(
+            (sum,item) =>
+                sum + item.price,
+            0
+        );
+
+
+    message +=
+        "💵 مجموع: " +
+        formatPrice(total);
+
+
+    const telegramURL =
+        "https://t.me/" +
+        TELEGRAM_USERNAME +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+    window.open(
+        telegramURL,
+        "_blank"
+    );
+
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+function toggleProfile(){
+
+    document
+        .getElementById("profileBox")
+        .classList.toggle("active");
+
+}
+
+
+function savePhone(){
+
+    const input =
+        document.getElementById("phone");
+
+    const phone =
+        input.value.trim();
+
+
+    if(!/^09\d{9}$/.test(phone)){
+
+        showToast(
+            "شماره موبایل معتبر وارد کنید."
+        );
+
+        return;
+
+    }
+
+
+    localStorage.setItem(
+        "zuse_phone",
+        phone
+    );
+
+
+    updateProfileStatus();
+
+    showToast(
+        "شماره با موفقیت ذخیره شد."
+    );
+
+}
+
+
+function updateProfileStatus(){
+
+    const phone =
+        localStorage.getItem("zuse_phone");
+
+
+    if(phone){
+
+        document
+            .getElementById("phone")
+            .value =
+            phone;
+
+        document
+            .getElementById("profileStatus")
+            .innerText =
+            "شماره ثبت شده: " + phone;
+
+    }
+
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.innerText = message;
+
+    toast.classList.add("show");
+
+
+    setTimeout(()=>{
+
+        toast.classList.remove("show");
+
+    },3000);
+
+}
+
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+function scrollToShop(){
+
+    document
+        .getElementById("shop")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+/* =========================================================
+   CLOSE MODAL BY BACKDROP
+========================================================= */
+
+document
+    .getElementById("modal")
+    .addEventListener("click",function(e){
+
+        if(e.target === this){
+            closeModal();
+        }
+
+    });
+
+
+/* =========================================================
+   ESC
+========================================================= */
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key === "Escape"){
+
+        closeModal();
+        closeCart();
+
+    }
+
+});
+
+
+/* =========================================================
+   INIT
+========================================================= */
+
+renderProducts();
+
+updateProfileStatus();
+
+updateCart();
+
+</script>
+
+</body>
+</html>
+```
 
